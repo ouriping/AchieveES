@@ -1,0 +1,512 @@
+
+ 
+记录时间：2016-09-04 00:43:23,807 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:CheckUserLogin
+            开始时间：2016/9/4 0:43:23
+            结束时间：2016/9/4 0:43:23
+            总 时 间：0.0312874秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 00:43:23,807 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:CheckUserLogin
+            开始时间：2016/9/4 0:43:23
+            结束时间：2016/9/4 0:43:23
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 01:47:52,728 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:Index
+            开始时间：2016/9/4 1:47:52
+            结束时间：2016/9/4 1:47:52
+            总 时 间：0.0312948秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 01:47:52,775 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:Index
+            开始时间：2016/9/4 1:47:52
+            结束时间：2016/9/4 1:47:52
+            总 时 间：0.0156323秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 01:47:53,025 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:Index
+            开始时间：2016/9/4 1:47:53
+            结束时间：2016/9/4 1:47:53
+            总 时 间：4.49E-05秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 01:47:53,025 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:Index
+            开始时间：2016/9/4 1:47:53
+            结束时间：2016/9/4 1:47:53
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 01:47:53,431 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:Index
+            开始时间：2016/9/4 1:47:53
+            结束时间：2016/9/4 1:47:53
+            总 时 间：3.92E-05秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 01:47:53,571 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:Index
+            开始时间：2016/9/4 1:47:53
+            结束时间：2016/9/4 1:47:53
+            总 时 间：0.1406947秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 01:47:54,087 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:Index
+            开始时间：2016/9/4 1:47:54
+            结束时间：2016/9/4 1:47:54
+            总 时 间：8.43E-05秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 01:47:54,103 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:Index
+            开始时间：2016/9/4 1:47:54
+            结束时间：2016/9/4 1:47:54
+            总 时 间：0.0156845秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 01:51:41,633 
+线程ID:[13] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:Index
+            开始时间：2016/9/4 1:51:41
+            结束时间：2016/9/4 1:51:41
+            总 时 间：6.69E-05秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 01:51:41,633 
+线程ID:[13] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:Index
+            开始时间：2016/9/4 1:51:41
+            结束时间：2016/9/4 1:51:41
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 01:51:41,758 
+线程ID:[11] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:Index
+            开始时间：2016/9/4 1:51:41
+            结束时间：2016/9/4 1:51:41
+            总 时 间：6.69E-05秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 01:51:41,758 
+线程ID:[11] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:Index
+            开始时间：2016/9/4 1:51:41
+            结束时间：2016/9/4 1:51:41
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 05:28:24,523 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:Index
+            开始时间：2016/9/4 5:28:24
+            结束时间：2016/9/4 5:28:24
+            总 时 间：0.0156417秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 05:28:24,570 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:Index
+            开始时间：2016/9/4 5:28:24
+            结束时间：2016/9/4 5:28:24
+            总 时 间：0.015577秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 06:56:41,926 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:Index
+            开始时间：2016/9/4 6:56:41
+            结束时间：2016/9/4 6:56:41
+            总 时 间：7.83E-05秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 06:56:41,972 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:Index
+            开始时间：2016/9/4 6:56:41
+            结束时间：2016/9/4 6:56:41
+            总 时 间：0.0313076秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 08:30:31,832 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:Index
+            开始时间：2016/9/4 8:30:31
+            结束时间：2016/9/4 8:30:31
+            总 时 间：0.0156876秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 08:30:32,035 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:Index
+            开始时间：2016/9/4 8:30:31
+            结束时间：2016/9/4 8:30:32
+            总 时 间：0.1718101秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 08:30:52,160 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:Index
+            开始时间：2016/9/4 8:30:52
+            结束时间：2016/9/4 8:30:52
+            总 时 间：1.7E-06秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 08:30:52,160 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:Index
+            开始时间：2016/9/4 8:30:52
+            结束时间：2016/9/4 8:30:52
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 09:12:24,345 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:Index
+            开始时间：2016/9/4 9:12:24
+            结束时间：2016/9/4 9:12:24
+            总 时 间：0.0156378秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 09:12:24,376 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:Index
+            开始时间：2016/9/4 9:12:24
+            结束时间：2016/9/4 9:12:24
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 09:12:24,485 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:Index
+            开始时间：2016/9/4 9:12:24
+            结束时间：2016/9/4 9:12:24
+            总 时 间：5.34E-05秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 09:12:24,548 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:Index
+            开始时间：2016/9/4 9:12:24
+            结束时间：2016/9/4 9:12:24
+            总 时 间：0.0625969秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 19:35:34,255 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:Index
+            开始时间：2016/9/4 19:35:34
+            结束时间：2016/9/4 19:35:34
+            总 时 间：6.1E-05秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 19:35:34,458 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:Index
+            开始时间：2016/9/4 19:35:34
+            结束时间：2016/9/4 19:35:34
+            总 时 间：0.1561397秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 20:50:12,498 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:Index
+            开始时间：2016/9/4 20:50:12
+            结束时间：2016/9/4 20:50:12
+            总 时 间：0.2499211秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 20:50:12,529 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:Index
+            开始时间：2016/9/4 20:50:12
+            结束时间：2016/9/4 20:50:12
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 20:50:12,920 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:Index
+            开始时间：2016/9/4 20:50:12
+            结束时间：2016/9/4 20:50:12
+            总 时 间：0.0157223秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-09-04 20:50:12,982 
+线程ID:[7] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:Index
+            开始时间：2016/9/4 20:50:12
+            结束时间：2016/9/4 20:50:12
+            总 时 间：0.062492秒
+            Form表单数据：
+            URL参数：
+                    
+ 

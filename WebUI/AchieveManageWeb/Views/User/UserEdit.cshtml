@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>修改用户</title>
+</head>
+<body>
+    <div style="padding: 15px; overflow: hidden">
+        <form id="UserEditForm" method="post" action="">
+            <table class="tableForm" width="100%">
+                <tr>
+                    <th>
+                        登录账号：
+                    </th>
+                    <td>
+                        <input type="hidden" name="hidid" id="hidid" />
+                        <input type="hidden" name="hidoriginalName" id="hidoriginalName" />
+                        <input type="text" name="txtUserIDEdit" id="txtUserIDEdit" readonly="readonly" disabled="disabled" class="easyui-validatebox textbox"
+                               data-options="required:true,validType:'username'" style="width:170px;height:22px;" /><span style="color:gray;">字母开头，允许6-16位，允许字母数字下划线</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        用户名称：
+                    </th>
+                    <td>
+                        <input type="text" name="txtUserNameEdit" id="txtUserNameEdit" class="easyui-validatebox textbox"
+                               data-options="required:true,validType:'length[2,20]'" style="width:170px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        联系人手机：
+                    </th>
+                    <td>
+                        <input type="text" name="txtMobilePhone" id="txtMobilePhone" class="easyui-validatebox textbox" data-options="required:false,validType:'mobile'" style="width:170px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        联系人邮箱：
+                    </th>
+                    <td>
+                        <input type="text" name="txtEmail" id="txtEmail" class="easyui-validatebox textbox" data-options="required:false,validType:'email'" style="width:170px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        是否启用：
+                    </th>
+                    <td>
+                        <input type="checkbox" name="selUserIsableEdit" id="selUserIsableEdit" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        已经改密：
+                    </th>
+                    <td>
+                        <input type="checkbox" name="selIfChangepwdEdit" id="selIfChangepwdEdit" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        简介：
+                    </th>
+                    <td>
+                        <textarea rows="3" cols="50" name="txtUserDescriptionEdit" id="txtUserDescriptionEdit" class="easyui-validatebox textbox" data-options="required:false,validType:'length[1,100]'"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

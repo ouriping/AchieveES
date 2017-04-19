@@ -1,0 +1,1152 @@
+
+ 
+记录时间：2017-01-09 13:55:36,674 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:Index
+            开始时间：2017/1/9 13:55:36
+            结束时间：2017/1/9 13:55:36
+            总 时 间：0.0080047秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:36,863 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:Index
+            开始时间：2017/1/9 13:55:36
+            结束时间：2017/1/9 13:55:36
+            总 时 间：0.1670167秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:37,193 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:Index
+            开始时间：2017/1/9 13:55:37
+            结束时间：2017/1/9 13:55:37
+            总 时 间：0.0070578秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:39,531 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:Index
+            开始时间：2017/1/9 13:55:37
+            结束时间：2017/1/9 13:55:39
+            总 时 间：2.3382338秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:40,128 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：ValidatorController
+            ActionName:GetValidatorGraphics
+            开始时间：2017/1/9 13:55:40
+            结束时间：2017/1/9 13:55:40
+            总 时 间：0.0550513秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:40,128 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：ValidatorController
+            ViewName:GetValidatorGraphics
+            开始时间：2017/1/9 13:55:40
+            结束时间：2017/1/9 13:55:40
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:49,969 
+线程ID:[11] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:CheckUserLogin
+            开始时间：2017/1/9 13:55:49
+            结束时间：2017/1/9 13:55:49
+            总 时 间：0.5241353秒
+            Form表单数据：AccountName=admin&Password=admin
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:49,970 
+线程ID:[11] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:CheckUserLogin
+            开始时间：2017/1/9 13:55:49
+            结束时间：2017/1/9 13:55:49
+            总 时 间：0秒
+            Form表单数据：AccountName=admin&Password=admin
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:51,183 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:Index
+            开始时间：2017/1/9 13:55:51
+            结束时间：2017/1/9 13:55:51
+            总 时 间：5.67E-05秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:51,187 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:Index
+            开始时间：2017/1/9 13:55:51
+            结束时间：2017/1/9 13:55:51
+            总 时 间：0.0040004秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:51,504 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：ValidatorController
+            ActionName:GetValidatorGraphics
+            开始时间：2017/1/9 13:55:51
+            结束时间：2017/1/9 13:55:51
+            总 时 间：0.0030888秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:51,505 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：ValidatorController
+            ViewName:GetValidatorGraphics
+            开始时间：2017/1/9 13:55:51
+            结束时间：2017/1/9 13:55:51
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:58,730 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:CheckUserLogin
+            开始时间：2017/1/9 13:55:58
+            结束时间：2017/1/9 13:55:58
+            总 时 间：0.0400114秒
+            Form表单数据：AccountName=admin&Password=5ypcqh
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:58,730 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:CheckUserLogin
+            开始时间：2017/1/9 13:55:58
+            结束时间：2017/1/9 13:55:58
+            总 时 间：0秒
+            Form表单数据：AccountName=admin&Password=5ypcqh
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:55:58,853 
+线程ID:[11] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:Index
+            开始时间：2017/1/9 13:55:58
+            结束时间：2017/1/9 13:55:58
+            总 时 间：0.1060237秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:00,115 
+线程ID:[11] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:Index
+            开始时间：2017/1/9 13:55:58
+            结束时间：2017/1/9 13:56:00
+            总 时 间：1.2611261秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:00,812 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:GetTreeByEasyui
+            开始时间：2017/1/9 13:56:00
+            结束时间：2017/1/9 13:56:00
+            总 时 间：0.0670195秒
+            Form表单数据：id=0
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:00,816 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:GetTreeByEasyui
+            开始时间：2017/1/9 13:56:00
+            结束时间：2017/1/9 13:56:00
+            总 时 间：0.0040004秒
+            Form表单数据：id=0
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:00,819 
+线程ID:[12] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:CheckIsChangePwd
+            开始时间：2017/1/9 13:56:00
+            结束时间：2017/1/9 13:56:00
+            总 时 间：0.0520202秒
+            Form表单数据：action=getuser
+            URL参数：r=0.4846330238506198
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:00,819 
+线程ID:[12] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:CheckIsChangePwd
+            开始时间：2017/1/9 13:56:00
+            结束时间：2017/1/9 13:56:00
+            总 时 间：0秒
+            Form表单数据：action=getuser
+            URL参数：r=0.4846330238506198
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:01,210 
+线程ID:[11] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:GetTreeByEasyui
+            开始时间：2017/1/9 13:56:01
+            结束时间：2017/1/9 13:56:01
+            总 时 间：0.0350593秒
+            Form表单数据：
+            URL参数：id=1
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:01,211 
+线程ID:[11] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:GetTreeByEasyui
+            开始时间：2017/1/9 13:56:01
+            结束时间：2017/1/9 13:56:01
+            总 时 间：0.0010001秒
+            Form表单数据：
+            URL参数：id=1
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:01,330 
+线程ID:[12] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:GetTreeByEasyui
+            开始时间：2017/1/9 13:56:01
+            结束时间：2017/1/9 13:56:01
+            总 时 间：0.0280713秒
+            Form表单数据：
+            URL参数：id=14
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:01,330 
+线程ID:[12] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:GetTreeByEasyui
+            开始时间：2017/1/9 13:56:01
+            结束时间：2017/1/9 13:56:01
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：id=14
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:01,462 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:GetTreeByEasyui
+            开始时间：2017/1/9 13:56:01
+            结束时间：2017/1/9 13:56:01
+            总 时 间：0.0310845秒
+            Form表单数据：
+            URL参数：id=1030
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:01,463 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:GetTreeByEasyui
+            开始时间：2017/1/9 13:56:01
+            结束时间：2017/1/9 13:56:01
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：id=1030
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:08,899 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：ButtonController
+            ActionName:Index
+            开始时间：2017/1/9 13:56:08
+            结束时间：2017/1/9 13:56:08
+            总 时 间：0.0050282秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:10,371 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：ButtonController
+            ViewName:Index
+            开始时间：2017/1/9 13:56:08
+            结束时间：2017/1/9 13:56:10
+            总 时 间：1.4711471秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:10,663 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：ButtonController
+            ActionName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:56:10
+            结束时间：2017/1/9 13:56:10
+            总 时 间：0.0240045秒
+            Form表单数据：KeyCode=button&KeyName=Button
+            URL参数：r=0.4003559376578778
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:10,664 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：ButtonController
+            ViewName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:56:10
+            结束时间：2017/1/9 13:56:10
+            总 时 间：0秒
+            Form表单数据：KeyCode=button&KeyName=Button
+            URL参数：r=0.4003559376578778
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:10,945 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：ButtonController
+            ActionName:GetAllButtonInfo
+            开始时间：2017/1/9 13:56:10
+            结束时间：2017/1/9 13:56:10
+            总 时 间：0.0320327秒
+            Form表单数据：page=1&rows=20&sort=Sort&order=asc
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:10,945 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：ButtonController
+            ViewName:GetAllButtonInfo
+            开始时间：2017/1/9 13:56:10
+            结束时间：2017/1/9 13:56:10
+            总 时 间：0秒
+            Form表单数据：page=1&rows=20&sort=Sort&order=asc
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:11,864 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：IconsController
+            ActionName:Index
+            开始时间：2017/1/9 13:56:11
+            结束时间：2017/1/9 13:56:11
+            总 时 间：0.0050246秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:13,216 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：IconsController
+            ViewName:Index
+            开始时间：2017/1/9 13:56:11
+            结束时间：2017/1/9 13:56:13
+            总 时 间：1.3511351秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:13,402 
+线程ID:[12] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：ButtonController
+            ActionName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:56:13
+            结束时间：2017/1/9 13:56:13
+            总 时 间：0.0150784秒
+            Form表单数据：KeyCode=Icons&KeyName=Icons
+            URL参数：r=0.1276941813994199
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:13,402 
+线程ID:[12] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：ButtonController
+            ViewName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:56:13
+            结束时间：2017/1/9 13:56:13
+            总 时 间：0秒
+            Form表单数据：KeyCode=Icons&KeyName=Icons
+            URL参数：r=0.1276941813994199
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:13,580 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：IconsController
+            ActionName:GetAllIconsInfo
+            开始时间：2017/1/9 13:56:13
+            结束时间：2017/1/9 13:56:13
+            总 时 间：0.0210962秒
+            Form表单数据：page=1&rows=20&sort=UpdateTime&order=desc
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:13,580 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：IconsController
+            ViewName:GetAllIconsInfo
+            开始时间：2017/1/9 13:56:13
+            结束时间：2017/1/9 13:56:13
+            总 时 间：0秒
+            Form表单数据：page=1&rows=20&sort=UpdateTime&order=desc
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:15,181 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：MenuController
+            ActionName:Index
+            开始时间：2017/1/9 13:56:15
+            结束时间：2017/1/9 13:56:15
+            总 时 间：0.0200563秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:16,442 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：MenuController
+            ViewName:Index
+            开始时间：2017/1/9 13:56:15
+            结束时间：2017/1/9 13:56:16
+            总 时 间：1.2611261秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:16,807 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：ButtonController
+            ActionName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:56:16
+            结束时间：2017/1/9 13:56:16
+            总 时 间：0.1350189秒
+            Form表单数据：KeyCode=menu&KeyName=Menu
+            URL参数：r=0.4972187434323132
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:16,808 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：ButtonController
+            ViewName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:56:16
+            结束时间：2017/1/9 13:56:16
+            总 时 间：0秒
+            Form表单数据：KeyCode=menu&KeyName=Menu
+            URL参数：r=0.4972187434323132
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:17,207 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：MenuController
+            ActionName:GetAllMenuInfo
+            开始时间：2017/1/9 13:56:17
+            结束时间：2017/1/9 13:56:17
+            总 时 间：0.1720588秒
+            Form表单数据：page=1&rows=20&sort=ParentId,Sort&order=asc,asc
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:17,207 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：MenuController
+            ViewName:GetAllMenuInfo
+            开始时间：2017/1/9 13:56:17
+            结束时间：2017/1/9 13:56:17
+            总 时 间：0秒
+            Form表单数据：page=1&rows=20&sort=ParentId,Sort&order=asc,asc
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:31,005 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：MenuController
+            ActionName:Index
+            开始时间：2017/1/9 13:56:31
+            结束时间：2017/1/9 13:56:31
+            总 时 间：0.0040385秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:31,008 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：MenuController
+            ViewName:Index
+            开始时间：2017/1/9 13:56:31
+            结束时间：2017/1/9 13:56:31
+            总 时 间：0.0030003秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:31,289 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：ButtonController
+            ActionName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:56:31
+            结束时间：2017/1/9 13:56:31
+            总 时 间：0.0060669秒
+            Form表单数据：KeyCode=menu&KeyName=Menu
+            URL参数：r=0.6766578727401793
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:31,290 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：ButtonController
+            ViewName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:56:31
+            结束时间：2017/1/9 13:56:31
+            总 时 间：0秒
+            Form表单数据：KeyCode=menu&KeyName=Menu
+            URL参数：r=0.6766578727401793
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:31,574 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：MenuController
+            ActionName:GetAllMenuInfo
+            开始时间：2017/1/9 13:56:31
+            结束时间：2017/1/9 13:56:31
+            总 时 间：0.0070954秒
+            Form表单数据：page=1&rows=20&sort=ParentId,Sort&order=asc,asc
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:31,574 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：MenuController
+            ViewName:GetAllMenuInfo
+            开始时间：2017/1/9 13:56:31
+            结束时间：2017/1/9 13:56:31
+            总 时 间：0秒
+            Form表单数据：page=1&rows=20&sort=ParentId,Sort&order=asc,asc
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:35,714 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：UserController
+            ActionName:Index
+            开始时间：2017/1/9 13:56:35
+            结束时间：2017/1/9 13:56:35
+            总 时 间：0.0050094秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:37,296 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：UserController
+            ViewName:Index
+            开始时间：2017/1/9 13:56:35
+            结束时间：2017/1/9 13:56:37
+            总 时 间：1.5821582秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:37,764 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：ButtonController
+            ActionName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:56:37
+            结束时间：2017/1/9 13:56:37
+            总 时 间：0.0100144秒
+            Form表单数据：KeyCode=user&KeyName=User
+            URL参数：r=0.7827487629838288
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:37,764 
+线程ID:[8] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：ButtonController
+            ViewName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:56:37
+            结束时间：2017/1/9 13:56:37
+            总 时 间：0秒
+            Form表单数据：KeyCode=user&KeyName=User
+            URL参数：r=0.7827487629838288
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:37,982 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：UserController
+            ActionName:GetAllUserInfo
+            开始时间：2017/1/9 13:56:37
+            结束时间：2017/1/9 13:56:37
+            总 时 间：0.0370362秒
+            Form表单数据：page=1&rows=20&sort=UpdateTime&order=desc
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:37,982 
+线程ID:[9] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：UserController
+            ViewName:GetAllUserInfo
+            开始时间：2017/1/9 13:56:37
+            结束时间：2017/1/9 13:56:37
+            总 时 间：0秒
+            Form表单数据：page=1&rows=20&sort=UpdateTime&order=desc
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:38,487 
+线程ID:[12] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：RoleController
+            ActionName:Index
+            开始时间：2017/1/9 13:56:38
+            结束时间：2017/1/9 13:56:38
+            总 时 间：0.0040867秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:40,012 
+线程ID:[12] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：RoleController
+            ViewName:Index
+            开始时间：2017/1/9 13:56:38
+            结束时间：2017/1/9 13:56:40
+            总 时 间：1.5241524秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:40,253 
+线程ID:[13] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：ButtonController
+            ActionName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:56:40
+            结束时间：2017/1/9 13:56:40
+            总 时 间：0.0070632秒
+            Form表单数据：KeyCode=role&KeyName=Role
+            URL参数：r=0.33791410899721086
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:40,254 
+线程ID:[13] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：ButtonController
+            ViewName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:56:40
+            结束时间：2017/1/9 13:56:40
+            总 时 间：0秒
+            Form表单数据：KeyCode=role&KeyName=Role
+            URL参数：r=0.33791410899721086
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:40,479 
+线程ID:[12] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：RoleController
+            ActionName:GetAllRoleInfo
+            开始时间：2017/1/9 13:56:40
+            结束时间：2017/1/9 13:56:40
+            总 时 间：0.0110858秒
+            Form表单数据：page=1&rows=20&sort=UpdateTime&order=asc
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:56:40,479 
+线程ID:[12] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：RoleController
+            ViewName:GetAllRoleInfo
+            开始时间：2017/1/9 13:56:40
+            结束时间：2017/1/9 13:56:40
+            总 时 间：0秒
+            Form表单数据：page=1&rows=20&sort=UpdateTime&order=asc
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:57:46,754 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：DepartmentController
+            ActionName:Index
+            开始时间：2017/1/9 13:57:46
+            结束时间：2017/1/9 13:57:46
+            总 时 间：0.0060127秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:57:48,160 
+线程ID:[10] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：DepartmentController
+            ViewName:Index
+            开始时间：2017/1/9 13:57:46
+            结束时间：2017/1/9 13:57:48
+            总 时 间：1.4061406秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:57:48,599 
+线程ID:[12] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：ButtonController
+            ActionName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:57:48
+            结束时间：2017/1/9 13:57:48
+            总 时 间：0.0160972秒
+            Form表单数据：KeyCode=department&KeyName=Department
+            URL参数：r=0.11054397444240749
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:57:48,599 
+线程ID:[12] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：ButtonController
+            ViewName:GetUserAuthorizeButton
+            开始时间：2017/1/9 13:57:48
+            结束时间：2017/1/9 13:57:48
+            总 时 间：0秒
+            Form表单数据：KeyCode=department&KeyName=Department
+            URL参数：r=0.11054397444240749
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:57:48,800 
+线程ID:[13] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：DepartmentController
+            ActionName:GetAllDepartmentInfo
+            开始时间：2017/1/9 13:57:48
+            结束时间：2017/1/9 13:57:48
+            总 时 间：0.0140173秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 13:57:48,800 
+线程ID:[13] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：DepartmentController
+            ViewName:GetAllDepartmentInfo
+            开始时间：2017/1/9 13:57:48
+            结束时间：2017/1/9 13:57:48
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 14:00:11,042 
+线程ID:[15] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：IconsController
+            ActionName:IconsAdd
+            开始时间：2017/1/9 14:00:11
+            结束时间：2017/1/9 14:00:11
+            总 时 间：0.00504秒
+            Form表单数据：
+            URL参数：_=1483941373280
+                    
+ 
+
+ 
+记录时间：2017-01-09 14:00:11,052 
+线程ID:[15] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：IconsController
+            ViewName:IconsAdd
+            开始时间：2017/1/9 14:00:11
+            结束时间：2017/1/9 14:00:11
+            总 时 间：0.0090009秒
+            Form表单数据：
+            URL参数：_=1483941373280
+                    
+ 
+
+ 
+记录时间：2017-01-09 14:00:11,695 
+线程ID:[17] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：IconsController
+            ActionName:GetAllImgInfo
+            开始时间：2017/1/9 14:00:11
+            结束时间：2017/1/9 14:00:11
+            总 时 间：0.5241053秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2017-01-09 14:00:11,696 
+线程ID:[17] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：IconsController
+            ViewName:GetAllImgInfo
+            开始时间：2017/1/9 14:00:11
+            结束时间：2017/1/9 14:00:11
+            总 时 间：0.0010001秒
+            Form表单数据：
+            URL参数：
+                    
+ 

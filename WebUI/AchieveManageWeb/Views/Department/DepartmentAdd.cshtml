@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>添加部门</title>
+</head>
+<body>
+    <div style="padding: 15px; overflow: hidden">
+        <form id="DepartmentAddForm" method="post" action="">
+            <table class="tableForm" width="100%">
+                <tr>
+                    <th>
+                        名称：
+                    </th>
+                    <td>
+                        <input type="text" name="txtDepartmentName" id="txtDepartmentName" class="easyui-validatebox textbox"
+                               data-options="required:true,validType:'length[2,20]'" style="width:170px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        排序：
+                    </th>
+                    <td>
+                        <input type="number" name="txtSort" id="txtSort" value="1" class="easyui-numberspinner"
+                               data-options="min:1,max:100,editable:false" autocomplete="off" style="width:70px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        父节点：
+                    </th>
+                    <td>
+                        <input class="easyui-combotree" id="treeDepartmentParentId" name="treeDepartmentParentId"
+                               data-options="url: '/Department/GetAllDepartmentTree',lines:true" style="width:170px;height:22px;" />
+                        <img style="cursor: pointer; vertical-align: middle;" onclick="$('#treeDepartmentParentId').combotree('clear');"
+                             alt="清空父节点" title="清空父节点" src="../Content/themes/icon/edit-clear.png" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

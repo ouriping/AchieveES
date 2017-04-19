@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>分配按钮权限</title>
+</head>
+<body>
+    <div style="padding: 15px; overflow: hidden">
+        <form id="SetMenuButtonForm" method="post" action="">
+            <table class="tableForm" width="100%">
+                <tr>
+                    <th>
+                        菜单名称：
+                    </th>
+                    <td>
+                        <input type="hidden" name="hidid" id="hidid" />
+                        <input type="text" name="txtMenuBtnName" id="txtMenuBtnName" class="easyui-validatebox textbox"
+                               data-options="required:false" style="width:170px;height:22px;" disabled="disabled" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        按钮：
+                    </th>
+                    <td>
+                        <select id="comButtonTree" name="comButtonTree" class="easyui-combotree" data-options="url:'/Button/GetAllButtonTree',editable:false,valueField:'id',textField:'text',multiple:true" style="width:170px;height:22px;"></select>
+                        <img style="cursor: pointer; vertical-align: middle;" onclick="$('#comTreeButton').combotree('clear');"
+                             alt="清空按钮" title="清空按钮" src="../Content/themes/icon/edit-clear.png" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>编辑部门</title>
+</head>
+<body>
+    <div style="padding: 15px; overflow: hidden">
+        <form id="DepartmentEditForm" method="post" action="">
+            <table class="tableForm" width="100%">
+                <tr>
+                    <th>
+                        名称：
+                    </th>
+                    <td>
+                        <input type="hidden" name="hidid" id="hidid" />
+                        <input type="text" name="txtDepartmentName" id="txtDepartmentName" class="easyui-validatebox textbox"
+                               data-options="required:true,validType:'length[2,20]'" style="width:170px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        排序：
+                    </th>
+                    <td>
+                        <input type="number" name="txtSort" id="txtSort" value="1" class="easyui-numberspinner"
+                               data-options="min:1,max:100,editable:false" autocomplete="off" style="width:70px;height:22px;" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

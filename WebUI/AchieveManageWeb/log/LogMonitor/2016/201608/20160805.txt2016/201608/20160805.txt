@@ -1,0 +1,448 @@
+
+ 
+记录时间：2016-08-05 14:56:04,222 
+线程ID:[116] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:04
+            结束时间：2016/8/5 14:56:04
+            总 时 间：0.0312763秒
+            Form表单数据：id=0
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:04,222 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:CheckIsChangePwd
+            开始时间：2016/8/5 14:56:04
+            结束时间：2016/8/5 14:56:04
+            总 时 间：9.45E-05秒
+            Form表单数据：action=getuser
+            URL参数：r=0.9014636907785616
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:04,238 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:CheckIsChangePwd
+            开始时间：2016/8/5 14:56:04
+            结束时间：2016/8/5 14:56:04
+            总 时 间：0秒
+            Form表单数据：action=getuser
+            URL参数：r=0.9014636907785616
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:04,238 
+线程ID:[116] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:04
+            结束时间：2016/8/5 14:56:04
+            总 时 间：0秒
+            Form表单数据：id=0
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:04,328 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:04
+            结束时间：2016/8/5 14:56:04
+            总 时 间：0.0059233秒
+            Form表单数据：
+            URL参数：id=1
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:04,328 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:04
+            结束时间：2016/8/5 14:56:04
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：id=1
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:04,414 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:04
+            结束时间：2016/8/5 14:56:04
+            总 时 间：0.003929秒
+            Form表单数据：
+            URL参数：id=14
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:04,415 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:04
+            结束时间：2016/8/5 14:56:04
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：id=14
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:04,490 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:04
+            结束时间：2016/8/5 14:56:04
+            总 时 间：0.0078196秒
+            Form表单数据：
+            URL参数：id=1030
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:04,491 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:04
+            结束时间：2016/8/5 14:56:04
+            总 时 间：0.0009792秒
+            Form表单数据：
+            URL参数：id=1030
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:04,536 
+线程ID:[116] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:Index
+            开始时间：2016/8/5 14:56:04
+            结束时间：2016/8/5 14:56:04
+            总 时 间：0.0117215秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:05,312 
+线程ID:[116] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:Index
+            开始时间：2016/8/5 14:56:04
+            结束时间：2016/8/5 14:56:05
+            总 时 间：0.7763669秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:05,692 
+线程ID:[116] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:CheckIsChangePwd
+            开始时间：2016/8/5 14:56:05
+            结束时间：2016/8/5 14:56:05
+            总 时 间：0.0322676秒
+            Form表单数据：action=getuser
+            URL参数：r=0.6240260427292568
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:05,692 
+线程ID:[116] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:CheckIsChangePwd
+            开始时间：2016/8/5 14:56:05
+            结束时间：2016/8/5 14:56:05
+            总 时 间：0秒
+            Form表单数据：action=getuser
+            URL参数：r=0.6240260427292568
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:05,699 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:05
+            结束时间：2016/8/5 14:56:05
+            总 时 间：0.0391249秒
+            Form表单数据：id=0
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:05,699 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:05
+            结束时间：2016/8/5 14:56:05
+            总 时 间：0秒
+            Form表单数据：id=0
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:05,851 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:05
+            结束时间：2016/8/5 14:56:05
+            总 时 间：0.0078502秒
+            Form表单数据：
+            URL参数：id=1
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:05,851 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:05
+            结束时间：2016/8/5 14:56:05
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：id=1
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:05,923 
+线程ID:[116] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:05
+            结束时间：2016/8/5 14:56:05
+            总 时 间：0.0049146秒
+            Form表单数据：
+            URL参数：id=14
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:05,923 
+线程ID:[116] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:05
+            结束时间：2016/8/5 14:56:05
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：id=14
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:06,031 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：HomeController
+            ActionName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:06
+            结束时间：2016/8/5 14:56:06
+            总 时 间：0.0224367秒
+            Form表单数据：
+            URL参数：id=1030
+                    
+ 
+
+ 
+记录时间：2016-08-05 14:56:06,032 
+线程ID:[115] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：HomeController
+            ViewName:GetTreeByEasyui
+            开始时间：2016/8/5 14:56:06
+            结束时间：2016/8/5 14:56:06
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：id=1030
+                    
+ 
+
+ 
+记录时间：2016-08-05 16:12:39,035 
+线程ID:[153] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:UserLoginOut
+            开始时间：2016/8/5 16:12:39
+            结束时间：2016/8/5 16:12:39
+            总 时 间：5.9E-05秒
+            Form表单数据：action=logout
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-08-05 16:12:39,035 
+线程ID:[153] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:UserLoginOut
+            开始时间：2016/8/5 16:12:39
+            结束时间：2016/8/5 16:12:39
+            总 时 间：0秒
+            Form表单数据：action=logout
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-08-05 16:12:39,066 
+线程ID:[150] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：LoginController
+            ActionName:Index
+            开始时间：2016/8/5 16:12:39
+            结束时间：2016/8/5 16:12:39
+            总 时 间：0.0009987秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-08-05 16:12:39,453 
+线程ID:[150] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：LoginController
+            ViewName:Index
+            开始时间：2016/8/5 16:12:39
+            结束时间：2016/8/5 16:12:39
+            总 时 间：0.3857376秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-08-05 16:12:39,520 
+线程ID:[153] 
+日志级别：  INFO  
+跟踪描述：
+            Action执行时间监控：
+            ControllerName：ValidatorController
+            ActionName:GetValidatorGraphics
+            开始时间：2016/8/5 16:12:39
+            结束时间：2016/8/5 16:12:39
+            总 时 间：0.010698秒
+            Form表单数据：
+            URL参数：
+                    
+ 
+
+ 
+记录时间：2016-08-05 16:12:39,520 
+线程ID:[153] 
+日志级别：  INFO  
+跟踪描述：
+            View视图生成时间监控：
+            ControllerName：ValidatorController
+            ViewName:GetValidatorGraphics
+            开始时间：2016/8/5 16:12:39
+            结束时间：2016/8/5 16:12:39
+            总 时 间：0秒
+            Form表单数据：
+            URL参数：
+                    
+ 

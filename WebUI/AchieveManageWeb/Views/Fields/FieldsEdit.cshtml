@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>编辑字段</title>
+</head>
+<body>
+    <div style="padding: 15px; overflow: hidden">
+        <form id="FieldsEditForm" method="post" action="">
+            <table class="tableForm" width="100%">
+                <tr>
+                    <th>
+                        字段名：
+                    </th>
+                    <td>
+                        <input type="hidden" name="hidid" id="hidid" />
+                        <input type="hidden" name="hidoriginalName" id="hidoriginalName" />
+                        <input type="hidden" name="hidoriginalViewName" id="hidoriginalViewName" />
+                        <input type="text" name="txtFieldName" id="txtFieldName" class="easyui-validatebox textbox"
+                               data-options="required:true,validType:'dbname'" disabled="disabled" style="width:150px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        字段显示名：
+                    </th>
+                    <td>
+                        <input type="text" name="txtFieldViewName" id="txtFieldViewName" class="easyui-validatebox textbox"
+                               data-options="required:true,validType:'length[2,20]'" style="width:150px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        所属数据表：
+                    </th>
+                    <td>
+                        <input class="easyui-combobox" id="comTabList" name="comTabList" disabled="disabled" data-options="url:'/Table/GetAllTableDrop',method:'get',valueField:'Id',textField:'TabViewName',required:true,panelHeight:'auto'">
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        数据类型：
+                    </th>
+                    <td>
+                        <input class="easyui-combobox" id="comDataTypeList" name="comDataTypeList" data-options="url:'/DataType/GetAllDataTypeDrop',method:'get',valueField:'Id',textField:'DataTypeName',required:true,panelHeight:'auto'">
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        是否搜索条件：
+                    </th>
+                    <td>
+                        <input type="checkbox" name="chkIsSearch" id="chkIsSearch" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        是否启用：
+                    </th>
+                    <td>
+                        <input type="checkbox" name="chkIsActive" id="chkIsActive" checked="checked" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        排序：
+                    </th>
+                    <td>
+                        <input type="number" name="txtSort" id="txtSort" value="1" class="easyui-numberspinner"
+                               data-options="min:1,max:100,editable:false" style="width:70px;height:22px;" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

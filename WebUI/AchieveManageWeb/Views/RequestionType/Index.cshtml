@@ -1,0 +1,267 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>常见问题分类管理</title>
+    <link href="~/Scripts/jquery-easyui-1.4.4/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-easyui-1.4.4/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <script src="~/Content/js/common.js"></script>
+    <link href="~/Content/themes/table.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({     //请求当前用户可以操作的按钮
+                url: "/Button/GetUserAuthorizeButton?r=" + Math.random(),
+                type: "post",
+                data: { "KeyCode": "RequestionType", "KeyName": "RequestionType" },
+                dataType: "json",
+                timeout: 5000,
+                success: function (data) {
+                    if (data.success) {
+                        var toolbar = getToolBar(data);      //common.js
+                        if (data.search) {     //判断是否有浏览权限
+                            $("#ui_RequestionType_dg").datagrid({       //初始化datagrid
+                                url: "/RequestionType/GetAllRequestionTypeInfo",
+                                striped: true, rownumbers: true, pagination: true, pageSize: 20, singleSelect: true, multiSort: false,
+                                idField: 'id',
+                                sortName: 'fsort',
+                                sortOrder: 'asc',
+                                pageList: [20, 40, 60, 80, 100],
+                                frozenColumns: [[
+                                                //{ field: 'ck', checkbox: true },
+                                                { field: 'id', title: '类型ID', width: 60 },
+                                                { field: 'ftypename', title: '类型名称', width: 100 }]],
+                                columns: [[
+                                           { field: 'fsort', title: '排序', sortable: true, width: 80 },
+                                           { field: 'CreateBy', title: '创建人', width: 80 },
+                                           { field: 'CreateTime', title: '创建时间', width: 120 },
+                                           { field: 'UpdateBy', title: '最后更新人', width: 130 },
+                                           { field: 'UpdateTime', title: '最后更新时间', width: 150 }
+                                ]],
+                                toolbar: toolbar.length == 0 ? null : toolbar
+                            });
+                        }
+                        else {
+                            $.show_alert("提示", "无权限，请联系管理员！");
+                        }
+                    } else {
+                        $.show_alert("错误", data.result);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    if (textStatus == "timeout") {
+                        $.show_alert("提示", "请求超时，请刷新当前页重试！");
+                    }
+                    else {
+                        $.show_alert("错误", textStatus + "：" + errorThrown);
+                    }
+                }
+            })
+
+            //回车搜索
+            $("#ui_RequestionType_search").find('input').on('keyup', function (event) {
+                if (event.keyCode == '13') {
+                    searchdata();
+                }
+            })
+        });
+
+        //新增
+        function AddRequestionType() {
+            $("<div/>").dialog({
+                id: "ui_RequestionType_add_dialog",
+                href: "/RequestionType/RequestionTypeAdd",
+                title: "添加问题分类",
+                height: 200,
+                width: 400,
+                modal: true,
+                buttons: [{
+                    id: "ui_RequestionType_add_btn",
+                    text: '添 加',
+                    handler: function () {
+                        $("#RequestionTypeAddForm").form("submit", {
+                            url: "/RequestionType/AddRequestionType",
+                            onSubmit: function (param) {
+                                param.TypeName = $("#txtTypeName").val();
+                                param.Sort = $('#txtSort').val();
+                                if ($(this).form('validate')) {
+                                    $('#ui_RequestionType_edit_btn').linkbutton('disable');
+                                    return true;
+                                }
+                                else {
+                                    $('#ui_RequestionType_add_btn').linkbutton('enable');
+                                    return false;
+                                }
+                            },
+                            success: function (data) {
+                                var dataJson = eval('(' + data + ')');
+                                if (dataJson.success) {
+                                    $("#ui_RequestionType_add_dialog").dialog('destroy');
+                                    $.show_alert("提示", dataJson.msg);
+                                    $("#ui_RequestionType_dg").datagrid("reload");
+                                } else {
+                                    $('#ui_RequestionType_add_btn').linkbutton('enable');
+                                    $.show_alert("提示", dataJson.msg);
+                                }
+                            }
+                        });
+                    }
+                }, {
+                    text: '取 消',
+                    handler: function () {
+                        $("#ui_RequestionType_add_dialog").dialog('destroy');
+                    }
+                }],
+                onLoad: function () {
+                    $("#txtTypeName").focus();
+                },
+                onClose: function () {
+                    $("#ui_RequestionType_add_dialog").dialog('destroy');  //销毁dialog对象
+                }
+            });
+        }
+
+        //修改
+        function EditRequestionType() {
+            var row = $("#ui_RequestionType_dg").datagrid("getChecked");
+            if (row.length < 1) {
+                $.show_alert("提示", "请先选择要修改的问题分类");
+                return;
+            }
+            $("<div/>").dialog({
+                id: "ui_RequestionType_edit_dialog",
+                href: "/RequestionType/RequestionTypeEdit",
+                title: "修改问题分类",
+                height: 200,
+                width: 400,
+                modal: true,
+                buttons: [{
+                    id: "ui_RequestionType_edit_btn",
+                    text: '修 改',
+                    handler: function () {
+                        $("#RequestionTypeEditForm").form("submit", {
+                            url: "/RequestionType/EditRequestionType",
+                            onSubmit: function (param) {
+                                param.id = $("#hidid").val();
+                                param.originalName = $("#hidoriginalName").val();
+                                param.TypeName = $("#txtTypeName").val();
+                                param.Sort = $('#txtSort').val();
+                                if ($(this).form('validate')) {
+                                    $('#ui_RequestionType_add_btn').linkbutton('disable');
+                                    return true;
+                                }
+                                else {
+                                    $('#ui_RequestionType_edit_btn').linkbutton('enable');
+                                    return false;
+                                }
+                            },
+                            success: function (data) {
+                                var dataJson = eval('(' + data + ')');
+                                if (dataJson.success) {
+                                    $("#ui_RequestionType_edit_dialog").dialog('destroy');
+                                    $.show_alert("提示", dataJson.msg);
+                                    $("#ui_RequestionType_dg").datagrid("reload");
+                                } else {
+                                    $('#ui_RequestionType_edit_btn').linkbutton('enable');
+                                    $.show_alert("提示", dataJson.msg);
+                                }
+                            }
+                        });
+                    }
+                }, {
+                    text: '取 消',
+                    handler: function () {
+                        $("#ui_RequestionType_edit_dialog").dialog('destroy');
+                    }
+                }],
+                onLoad: function () {
+                    $("#hidid").val(row[0].id);
+                    $("#hidoriginalName").val(row[0].ftypename);
+                    $("#txtTypeName").val(row[0].ftypename);
+                    $('#txtSort').numberspinner('setValue', row[0].fsort);
+                },
+                onClose: function () {
+                    $("#ui_RequestionType_edit_dialog").dialog('destroy');
+                }
+            });
+        }
+
+        //删除
+        function DelRequestionType() {
+            var rows = $("#ui_RequestionType_dg").datagrid("getChecked");
+            if (rows.length < 1) {
+                $.show_alert("提示", "请先勾选要删除的问题分类");
+                return;
+            }
+            $.messager.confirm('提示', '确定删除选中行吗？', function (r) {
+                if (r) {
+                    var RequestionTypeIDs = "";
+                    $.each(rows, function (i, row) {
+                        RequestionTypeIDs += row.id + ",";
+                    });
+                    RequestionTypeIDs = RequestionTypeIDs.substring(0, RequestionTypeIDs.length - 1);
+                    $.ajax({
+                        url: "/RequestionType/DelRequestionTypeByIDs",
+                        data: {
+                            IDs: RequestionTypeIDs
+                        },
+                        type: "POST",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.success) {
+                                $.show_alert("提示", data.msg);
+                                $("#ui_RequestionType_dg").datagrid("reload").datagrid('clearSelections').datagrid('clearChecked');
+                            } else {
+                                $.show_alert("提示", data.msg);
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        //搜索
+        function searchdata() {
+            $("#ui_RequestionType_dg").datagrid('load', {
+                FTypeName: $("#txtSearchFTypeName").val()
+            });
+            $("#ui_RequestionType_dg").datagrid('clearSelections').datagrid('clearChecked');
+        }
+
+    </script>
+
+</head>
+<body>
+    <div id="ui_RequestionType_layout" class="easyui-layout" data-options="fit:true,border:false">
+        <div data-options="region:'north',split:true,border:true,collapsed:false" title="搜索条件" style="height:72px;">
+            <div id="ui_RequestionType_search">
+                <table class="tableForm" style="height: 28px; background: #f5f5f5;">
+                    <tr>
+                        <th height="20px">
+                            类型名称：
+                        </th>
+                        <td>
+                            <input name="txtSearchFTypeName" id="txtSearchFTypeName" class="easyui-validatebox textbox" style="width:150px;height:22px;" />
+                        </td>
+                        <td>
+                            <a href="javascript:void(0);" class="easyui-linkbutton" iconcls="icon-search" plain="true"
+                               onclick="searchdata();">搜索</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div data-options="region:'center',border:false">
+            <table id="ui_RequestionType_dg" data-options="fit:true,border:false"></table>
+        </div>
+    </div>
+
+</body>
+</html>

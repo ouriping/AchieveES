@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>添加数据表</title>
+</head>
+<body>
+    <div style="padding: 15px; overflow: hidden">
+        <form id="TableAddForm" method="post" action="">
+            <table class="tableForm" width="100%">
+                <tr>
+                    <th>
+                        物理表名：
+                    </th>
+                    <td>
+                        <input type="text" name="txtTabName" id="txtTabName" class="easyui-validatebox textbox"
+                               data-options="required:true,validType:'dbname'" style="width:150px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        表显示名：
+                    </th>
+                    <td>
+                        <input type="text" name="txtTabViewName" id="txtTabViewName" class="easyui-validatebox textbox"
+                               data-options="required:true,validType:'length[2,20]'" style="width:150px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        是否启用：
+                    </th>
+                    <td>
+                        <input type="checkbox" name="chkIsActive" id="chkIsActive" checked="checked" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

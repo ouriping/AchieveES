@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>添加按钮</title>
+</head>
+<body>
+    <div style="padding: 15px; overflow: hidden">
+        <form id="ButtonAddForm" method="post" action="">
+            <table class="tableForm" width="100%">
+                <tr>
+                    <th>
+                        按钮名称：
+                    </th>
+                    <td>
+                        <input type="text" name="txtName" id="txtName" class="easyui-validatebox textbox"
+                               data-options="required:true,validType:'length[2,20]'" style="width:220px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        标识码：
+                    </th>
+                    <td>
+                        <input type="text" name="txtCode" id="txtCode" class="easyui-validatebox textbox"
+                               data-options="required:false,validType:'length[2,40]'" style="width:220px;height:22px;" />
+                    </td>
+                </tr>
+                @*<tr>
+                        <th>
+                            图标：
+                        </th>
+                        <td>
+                            <input type="text" name="txtIcon" id="txtIcon" class="easyui-validatebox textbox"
+                                   data-options="required:false,validType:'length[2,40]'" style="width:220px;height:22px;" />
+                        </td>
+                    </tr>*@
+                <tr>
+                    <th>
+                        图标：
+                    </th>
+                    <td>
+                        <select id="comboxIconTree" name="comboxIconTree" class="easyui-combotree" data-options="url:'/Icons/GetAllIconsTree',editable:false,valueField:'id',textField:'text',multiple:false" style="width:220px;height:22px;"></select>
+                        <img style="cursor: pointer; vertical-align: middle;" onclick="$('#comboxIconTree').combotree('clear');"
+                             alt="清空图标" title="清空图标" src="../Content/themes/icon/edit-clear.png" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        排序：
+                    </th>
+                    <td>
+                        <input type="number" name="txtSort" id="txtSort" value="1" class="easyui-numberspinner"
+                               data-options="min:1,max:100,editable:false" autocomplete="off" style="width:70px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        描述：
+                    </th>
+                    <td>
+                        <textarea rows="3" cols="30" name="txtDescription" id="txtDescription" class="easyui-validatebox textbox" data-options="multiline:true,required:false,validType:'length[1,30]'"></textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

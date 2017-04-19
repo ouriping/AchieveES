@@ -1,0 +1,282 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>按钮管理</title>
+    <link href="~/Scripts/jquery-easyui-1.4.4/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-easyui-1.4.4/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <script src="~/Content/js/common.js"></script>
+    <link href="~/Content/themes/table.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({     //请求当前用户可以操作的按钮
+                url: "/Button/GetUserAuthorizeButton?r=" + Math.random(),
+                type: "post",
+                data: { "KeyCode": "button", "KeyName": "Button" },
+                dataType: "json",
+                timeout: 5000,
+                success: function (data) {
+                    if (data.success) {
+                        var toolbar = getToolBar(data);      //common.js
+                        if (data.search) {     //判断是否有浏览权限
+                            $("#ui_button_dg").datagrid({       //初始化datagrid
+                                url: "/Button/GetAllButtonInfo",
+                                striped: true, rownumbers: true, pagination: true, pageSize: 20, singleSelect: true,
+                                idField: 'Id',
+                                sortName: 'Sort',
+                                sortOrder: 'asc',
+                                pageList: [20, 40, 60, 80, 100],
+                                frozenColumns: [[
+                                                 { field: 'Name', title: '按钮名称', width: 100 }
+                                ]],
+                                columns: [[
+                                           { field: 'Code', title: '标识码', width: 120 },
+                                           { field: 'Icon', title: '图标', width: 150 },
+                                           { field: 'Sort', title: '排序', sortable: true, width: 80 },
+                                           { field: 'UpdateTime', title: '最后更新时间', width: 130 },
+                                           { field: 'UpdateBy', title: '最后更新人', width: 130 },
+                                           {
+                                               field: 'Description', title: '描述', width: 250,
+                                               formatter: function (value, row, index) {
+                                                   return value.length > 20 ? '<span title="' + value + '">' + value + '</span>' : value;
+                                               }
+                                           }
+                                ]],
+                                toolbar: toolbar.length == 0 ? null : toolbar
+                            });
+                        }
+                        else {
+                            $.show_alert("提示", "无权限，请联系管理员！");
+                        }
+                    } else {
+                        $.show_alert("错误", data.result);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    if (textStatus == "timeout") {
+                        $.show_alert("提示", "请求超时，请刷新当前页重试！");
+                    }
+                    else {
+                        $.show_alert("错误", textStatus + "：" + errorThrown);
+                    }
+                }
+            })
+
+            //回车搜索
+            $("#ui_button_search").find('input').on('keyup', function (event) {
+                if (event.keyCode == '13') {
+                    searchdata();
+                }
+            })
+        })
+
+        //新增
+        function AddButton() {
+            $("<div/>").dialog({
+                id: "ui_button_add_dialog",
+                href: "/Button/ButtonAdd",
+                title: "添加按钮",
+                height: 300,
+                width: 400,
+                modal: true,
+                buttons: [{
+                    id: "ui_button_add_btn",
+                    text: '添 加',
+                    handler: function () {
+                        $("#ButtonAddForm").form("submit", {
+                            url: "/Button/AddButton",
+                            onSubmit: function (param) {
+                                param.Name = $("#txtName").val()
+                                param.Code = $("#txtCode").val();
+                                param.Icon = $("#comboxIconTree").combotree("getValues").toString();//$("#txtIcon").val();
+                                param.Sort = $('#txtSort').val();
+                                param.Description = $("#txtDescription").val();
+
+                                if ($(this).form('validate')) {
+                                    $('#ui_button_edit_btn').linkbutton('disable');
+                                    return true;
+                                }
+                                else {
+                                    $('#ui_button_add_btn').linkbutton('enable');
+                                    return false;
+                                }
+                            },
+                            success: function (data) {
+                                var dataJson = eval('(' + data + ')');
+                                if (dataJson.success) {
+                                    $("#ui_button_add_dialog").dialog('destroy');
+                                    $.show_alert("提示", dataJson.msg);
+                                    $("#ui_button_dg").datagrid("reload");
+                                } else {
+                                    $('#ui_button_add_btn').linkbutton('enable');
+                                    $.show_alert("提示", dataJson.msg);
+                                }
+                            }
+                        });
+                    }
+                }, {
+                    text: '取 消',
+                    handler: function () {
+                        $("#ui_button_add_dialog").dialog('destroy');
+                    }
+                }],
+                onLoad: function () {
+                    $("#txtbuttonName").focus();
+                },
+                onClose: function () {
+                    $("#ui_button_add_dialog").dialog('destroy');  //销毁dialog对象
+                }
+            });
+        }
+
+        //修改
+        function EditButton() {
+            var row = $("#ui_button_dg").datagrid("getChecked");
+            if (row.length < 1) {
+                $.show_alert("提示", "请先选择要修改的按钮");
+                return;
+            }
+            $("<div/>").dialog({
+                id: "ui_button_edit_dialog",
+                href: "/Button/ButtonEdit",
+                title: "修改按钮",
+                height: 300,
+                width: 400,
+                modal: true,
+                buttons: [{
+                    id: "ui_button_edit_btn",
+                    text: '修 改',
+                    handler: function () {
+                        $("#ButtonEditForm").form("submit", {
+                            url: "/Button/Editbutton",
+                            onSubmit: function (param) {
+                                param.id = $("#hidid").val();
+                                param.originalName = $("#hidoriginalName").val();
+                                param.Name = $("#txtName").val()
+                                param.Code = $("#txtCode").val();
+                                param.Icon = $("#comboxIconTree").combotree("getValues").toString(); //$("#txtIcon").val();
+                                param.Sort = $('#txtSort').val();
+                                param.Description = $("#txtDescription").val();
+
+                                if ($(this).form('validate')) {
+                                    $('#ui_button_add_btn').linkbutton('disable');
+                                    return true;
+                                }
+                                else {
+                                    $('#ui_button_edit_btn').linkbutton('enable');
+                                    return false;
+                                }
+                            },
+                            success: function (data) {
+                                var dataJson = eval('(' + data + ')');
+                                if (dataJson.success) {
+                                    $("#ui_button_edit_dialog").dialog('destroy');
+                                    $.show_alert("提示", dataJson.msg);
+                                    $("#ui_button_dg").datagrid("reload");
+                                } else {
+                                    $('#ui_button_edit_btn').linkbutton('enable');
+                                    $.show_alert("提示", dataJson.msg);
+                                }
+                            }
+                        });
+                    }
+                }, {
+                    text: '取 消',
+                    handler: function () {
+                        $("#ui_button_edit_dialog").dialog('destroy');
+                    }
+                }],
+                onLoad: function () {
+                    $("#hidid").val(row[0].Id);
+                    $("#hidoriginalName").val(row[0].Name);
+                    $("#txtName").val(row[0].Name);
+                    $("#txtCode").val(row[0].Code);
+                    //$("#txtIcon").val(row[0].Icon);
+                    $('#comboxIconTree').combotree('setValue', row[0].Icon);
+                    $('#txtSort').numberspinner('setValue', row[0].Sort);
+                    $("#txtDescription").val(row[0].Description);
+                },
+                onClose: function () {
+                    $("#ui_button_edit_dialog").dialog('destroy');
+                }
+            });
+        }
+
+        //删除
+        function DelButton() {
+            var rows = $("#ui_button_dg").datagrid("getChecked");
+            if (rows.length < 1) {
+                $.show_alert("提示", "请先勾选要删除的按钮");
+                return;
+            }
+            $.messager.confirm('提示', '确定删除选中行吗？', function (r) {
+                if (r) {
+                    var buttonIDs = "";
+                    $.each(rows, function (i, row) {
+                        buttonIDs += row.Id + ",";
+                    });
+                    buttonIDs = buttonIDs.substring(0, buttonIDs.length - 1);
+                    $.ajax({
+                        url: "/Button/DelButtonByIDs",
+                        data: {
+                            IDs: buttonIDs
+                        },
+                        type: "POST",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.success) {
+                                $.show_alert("提示", data.msg);
+                                $("#ui_button_dg").datagrid("reload").datagrid('clearSelections').datagrid('clearChecked');
+                            } else {
+                                $.show_alert("提示", data.msg);
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        //搜索
+        function searchdata() {
+            $("#ui_button_dg").datagrid('load', {
+                FButtonName: $("#txtSearchButtonName").val()
+            });
+            $("#ui_button_dg").datagrid('clearSelections').datagrid('clearChecked');
+        }
+
+    </script>
+</head>
+<body>
+    <div id="ui_button_layout" class="easyui-layout" data-options="fit:true,border:false">
+        <div data-options="region:'north',split:true,border:true,collapsed:false" title="搜索条件" style="height:72px;">
+            <div id="ui_button_search">
+                <table class="tableForm" style="height:28px;background:#f5f5f5;">
+                    <tr>
+                        <th>
+                            按钮名称：
+                        </th>
+                        <td>
+                            <input name="txtSearchButtonName" id="txtSearchButtonName" class="easyui-validatebox textbox" style="width:170px;height:22px;" />
+                        </td>
+                        <td>
+                            <a href="javascript:void(0);" class="easyui-linkbutton" iconcls="icon-search" plain="true"
+                               onclick="searchdata();">搜索</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div data-options="region:'center',border:false">
+            <table id="ui_button_dg" data-options="fit:true,border:false"></table>
+        </div>
+    </div>
+</body>
+</html>

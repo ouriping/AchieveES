@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>编辑图标</title>
+</head>
+<body>
+    <div style="padding: 15px; overflow: hidden">
+        <form id="IconsEditForm" method="post" action="">
+            <table class="tableForm" width="100%">
+                <tr>
+                    <th>
+                        图标名称：
+                    </th>
+                    <td>
+                        <input type="hidden" name="hidid" id="hidid" />
+                        <input type="hidden" name="hidoriginalName" id="hidoriginalName" />
+                        <input type="text" name="txtIconName" id="txtIconName" class="easyui-validatebox textbox"
+                               data-options="required:true,validType:'length[2,20]'" style="width:150px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        图标信息：
+                    </th>
+                    <td>
+                        @*<textarea rows="3" cols="50" name="txtIconCssInfo" id="txtIconCssInfo" class="easyui-validatebox textbox" data-options="required:false,validType:'length[1,200]'"></textarea>*@
+                        <select id="comboxIconTree" name="comboxIconTree" class="easyui-combotree" data-options="url:'/Icons/GetAllImgInfo',editable:false,valueField:'id',textField:'text',multiple:false" style="width: 250px; height: 22px;"></select>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

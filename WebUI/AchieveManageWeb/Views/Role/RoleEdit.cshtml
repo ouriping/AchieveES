@@ -1,0 +1,39 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>修改角色</title>
+</head>
+<body>
+    <div style="padding: 15px; overflow: hidden">
+        <form id="roleeditform" method="post" action="">
+            <table class="tableForm" width="100%">
+                <tr>
+                    <th>
+                        角色名称：
+                    </th>
+                    <td>
+                        <input type="hidden" name="hidid" id="hidid" />
+                        <input type="hidden" name="hidoriginalName" id="hidoriginalName" />
+                        <input type="text" name="txtRoleNameEdit" id="txtRoleNameEdit" class="easyui-validatebox textbox"
+                               data-options="required:true,validType:'length[2,20]'" style="width:150px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        描&nbsp;述：
+                    </th>
+                    <td>
+                        <textarea rows="3" cols="30" name="txtRoleDescriptionEdit" id="txtRoleDescriptionEdit" class="easyui-validatebox textbox" data-options="multiline:true,required:false,validType:'length[1,30]'" ></textarea>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

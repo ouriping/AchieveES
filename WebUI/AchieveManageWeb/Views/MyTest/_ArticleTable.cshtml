@@ -1,0 +1,25 @@
+﻿@model AchieveManageWeb.Models.MyTest.AjaxPager
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th class="nowrap">序号</th>
+        <th>
+            标题
+        </th>
+        <th>
+            内容
+        </th>
+    </tr>
+    @foreach (var item in Model.Articles)
+    {
+        <tr>
+            <td>@Html.DisplayFor(model => item.ID)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,130 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>添加问题</title>
+    <link href="~/Scripts/jquery-easyui-1.4.4/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-easyui-1.4.4/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <script src="~/Content/js/common.js"></script>
+    <link href="~/Content/themes/table.css" rel="stylesheet" />
+    <script src="~/kindeditor-4.1.3/kindeditor.js"></script>
+    <script src="~/kindeditor-4.1.3/lang/zh_CN.js"></script>
+    <script src="~/kindeditor-4.1.3/plugins/code/prettify.js"></script>
+    @*<script src="~/Scripts/lhgdialog/lhgdialog/lhgdialog.js?self=true&skin=discuz"></script>*@
+
+    <script type="text/javascript">
+        KindEditor.ready(function (K) {
+            //实现显示富文本的代码，第一个方法,实现添加的框架
+            window.editorAdd = K.create('#txtMainContent', {
+                cssPath: '~/kindeditor-4.1.3/plugins/code/prettify.css',
+                uploadJson: '../upload_json.ashx',
+                fileManagerJson: '../file_manager_json.ashx',
+                allowFileManager: true,
+                afterCreate: function () {
+                    var self = this;
+                    K.ctrl(document, 13, function () {//添加保存信息的组合键ctrl+z
+                        self.sync();//同步富文本编辑器里的内容到textarea中去
+                        K('form[name="txtMainContent"]')[0].submit();
+                    });
+                    K.ctrl(self.edit.doc, 13, function () {
+                        self.sync();
+                        K('form[name="txtMainContent"]')[0].submit();
+                    });
+                }
+            });
+            prettyPrint();
+
+            //获取添加文本框内容
+            function getEditorAddData() {
+                return editorAdd.html();     //使用上面定义的window.editorAdd的方法的HTML代码
+            }
+
+            $("#btnAdd").click(function () {
+                $("#RequestionAddForm").form("submit", {
+                    url: "/Requestion/AddRequestion",
+                    onSubmit: function (param) {
+                        param.FTitle = $("#txtFTitle").val();
+                        param.FTypeId = $("#comboxtype").combobox('getValues').toString();
+                        param.FContent = getEditorAddData();
+                        if ($(this).form('validate')) {
+                            return true;
+                        }
+                        else {
+                            return false;
+                        }
+                    },
+                    success: function (data) {
+                        var dataJson = eval('(' + data + ')');
+                        if (dataJson.success) {
+                            $.show_alert("提示", dataJson.msg);
+                            CloseDialogWin();
+                        } else {
+                            $.show_alert("提示", dataJson.msg);
+                        }
+                    }
+                });
+            });
+        });
+
+        //调用父窗口中的函数关闭
+        function CloseDialogWin() {
+            window.parent.window.CloseAddRequestionDialog(); 
+        }
+
+    </script>
+
+</head>
+<body>
+    <form id="RequestionAddForm" method="post" enctype="multipart/form-data" action="">
+        <table class="tableForm" width="100%">
+            <tr>
+                <th>
+                    标题：
+                </th>
+                <td>
+                    <input type="text" name="txtFTitle" id="txtFTitle" class="easyui-validatebox textbox"
+                           data-options="required:true,validType:'length[2,40]'" style="width:150px;height:22px;" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    问题所属分类：
+                </th>
+                <td>
+                    <input class="easyui-combobox" id="comboxtype" name="comboxtype" style="width:150px;height:22px;"
+                           data-options="required:true,
+                    url:'/RequestionType/GetAllRequestionTypeDrop',
+                    editable:false,
+                    valueField:'id',
+                    textField:'ftypename',
+                    multiple:false" />
+                    <img style="cursor: pointer; vertical-align: middle;" onclick="$('#comboxtype').combobox('clear');"
+                         alt="清空" title="清空" src="../Content/themes/icon/edit-clear.png" />
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    内容：
+                </th>
+                <td>
+                    <textarea id="txtMainContent" name="txtMainContent" style="width: 600px;height: 300px; visibility: hidden;" runat="server"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <input type="button" name="btnAdd" value="添 加" id="btnAdd" />
+                    <input type="button" name="btnCloase" value="取 消" id="btnCloase" onclick="CloseDialogWin();" />
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

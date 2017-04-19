@@ -1,0 +1,62 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>后台权限管理首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" type="image/ico" href="~/Content/themes/icon/user_home.png" />
+    <link href="~/Scripts/jquery-easyui-1.4.4/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-easyui-1.4.4/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
+    <script src="~/Content/js/common.js"></script>
+    <script src="~/Content/js/init.js" type="text/javascript"></script>
+    <link href="~/Content/themes/table.css" rel="stylesheet" />
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+</head>
+<body class="easyui-layout">
+    <div data-options="region:'north',border:false" style="height: 60px; background-color: #F5F5F5; padding: 10px; font-size: x-large;">
+        <img src="~/Content/images/Logo.png" /> 后台权限管理系统
+        <div style="position: absolute; right: 5px; top: 10px;">
+            欢迎您：<span style="color: #0082ff; ">@ViewBag.RealName</span>  @ViewBag.TimeView   @ViewBag.DayDate
+        </div>
+        <div style="position: absolute; right: 0px; bottom: 0px; ">
+            <a href="javascript:void(0);" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-set1'" onclick="changePwd('');">
+                修改密码
+            </a>
+            <a href="javascript:void(0);" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-stop'" onclick="loginOut();">
+                退出系统
+            </a>
+        </div>
+    </div>
+    @*旧版 菜单树 保留不使用*@
+    @*<div data-options="region:'west',split:true,title:'功能导航'" style="width: 180px; padding: 10px; background-color: white;">
+            <div>
+                <ul id="LeftMenuTree"></ul>
+            </div>
+        </div>*@
+    <div data-options="region:'west',split:true,title:'功能导航'" style="width: 180px; background-color: white;">
+        <div id="RightAccordion" class="easyui-accordion">
+        </div>
+    </div>
+    <div data-options="region:'center'">
+        <div id="tabs" class="easyui-tabs" fit="true" border="false" data-options="
+                    tools:[
+                    {iconCls : 'icon-arrow_refresh',text:'刷新',handler:refreshTab},
+                    {iconCls : 'icon-delete3',text:'关闭全部',handler:closeTab}
+                    ]">
+            <div id="home" title="我的主页" data-options="iconCls:'icon-house',closable:false" style="padding:10px">
+                This is the Home content.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+</script>

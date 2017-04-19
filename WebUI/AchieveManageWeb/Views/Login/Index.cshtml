@@ -1,0 +1,148 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>后台登录首页</title>
+    <link href="~/Scripts/jquery-easyui-1.4.4/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-easyui-1.4.4/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <script src="~/Content/js/common.js"></script>
+    <link href="~/Content/themes/table.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        if (window.parent.window != window) {
+            window.top.location.href = "/Login/Index";
+        }
+
+        $(function () {
+            $("#loginDialog").dialog({
+                title: "用户登录",
+                closable: false,
+                iconCls: 'icon-user_b',
+                modal: true,
+                width: 310,
+                height: 220,
+                buttons: [{
+                    id: "loginBtn",
+                    text: "登 录",
+                    handler: function () {
+                        if ($("#loginFrm").form('validate')) {
+                            login();
+                        }
+                    }
+                }]
+            });
+
+            //回车提交表单
+            //$("#loginFrm").find('input').on('keyup', function (event) {
+            //    if (event.keyCode == '13') {
+            //        login();
+            //    }
+            //})
+
+            //创建验证码
+            $("#valiCode").bind("click", function () {
+                this.src = "@Url.Action("GetValidatorGraphics", "Validator")?time=" + (new Date()).getTime();
+            });
+
+            //本地运行时使用 发布时注释
+            var code = getCookie('ValidatorCode');
+            $("#loginVerificationCode").val(code);
+
+            $("#loginName").focus();
+        })
+
+        function login() {
+            if (checkInput()) {
+                var postData = {
+                    AccountName: $("#loginName").val(),
+                    Password: $("#loginPwd").val(),
+                    CookieExpires: $("#remember").val()
+                };
+                //异步实现登录功能
+                $.post("/Login/CheckUserLogin", postData, function (data) {
+                    if (data == "OK") {
+                        window.location.href = "/Home/Index";
+                    }
+                    else {
+                        alert(data);
+                        window.location.href = "/Login/Index/";
+                    }
+                });
+            }
+        }
+
+        //验证码验证
+        function checkInput() {
+            //通过cookie获取验证码
+            var validatorcode = getCookie('ValidatorCode').toUpperCase();
+            if ($.trim($("#loginVerificationCode").val()) == "") {
+                $.show_alert("信息", "验证码不能为空");
+                $("#loginVerificationCode").val("").focus();
+                return false;
+            }
+            else if (document.getElementById("loginVerificationCode").value.toUpperCase() != validatorcode) {
+                $.show_alert("信息", "验证码错误");
+                $("#loginVerificationCode").val("").focus();
+                $("#valiCode").attr('src', '/Validator/GetValidatorGraphics?time=' + (new Date()).getTime());
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        //获取cookie
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1);
+                if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+            }
+            return "";
+        }
+    </script>
+</head>
+<body>
+    <div id="loginDialog" style="padding: 15px; text-align: center">
+        <form id="loginFrm" method="post">
+            <table class="tableForm" style="width: 100%">
+                <tr>
+                    <th>
+                        用户名：
+                    </th>
+                    <td>
+                        <input type="text" id="loginName" name="loginName" class="easyui-validatebox textbox" style="width:170px;height:22px;" data-options="prompt:'UserName',required:true,validType:'length[2,20]'" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        密&nbsp;码：
+                    </th>
+                    <td>
+                        <input type="password" id="loginPwd" name="loginPwd" class="easyui-validatebox textbox" style="width: 170px; height: 22px;" data-options="prompt:'Password',required:true" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        验证码：
+                    </th>
+                    <td>
+                        <input type="text" class="easyui-validatebox textbox" name="loginVerificationCode" id="loginVerificationCode" style="width: 100px; height: 22px; vertical-align: middle;" />
+                        <img id="valiCode" style="vertical-align: middle;" src="@Url.Action("GetValidatorGraphics", "Validator")" title="看不清？点击更换图片。" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

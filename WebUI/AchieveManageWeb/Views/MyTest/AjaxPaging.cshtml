@@ -1,0 +1,44 @@
+﻿@model AchieveManageWeb.Models.MyTest.AjaxPager
+@{
+    Layout = null;
+}
+@using Webdiyer.WebControls.Mvc;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>MVCPager-AjaxPaging</title>
+    <link href="~/Content/pagerstyles.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div style="padding: 15px;">
+        @using (Html.BeginForm("AjaxPaging", "MyTest", new RouteValueDictionary { { "id", "" } }, FormMethod.Get))
+        {
+            @Html.Label("关键字：") <input name="key" value="@Request.QueryString["key"]" /><input type="submit" value="查询" />
+        }
+
+        @*分页Table*@
+        @{ Html.RenderPartial("_ArticleTable"); }
+
+        <div class="text-center">
+            @Ajax.Pager(Model.Articles, new PagerOptions
+            {
+                PageIndexParameterName = "id",
+                FirstPageText = "首页",
+                PrevPageText = "上一页",
+                NextPageText = "下一页",
+                LastPageText = "末页",
+                NumericPagerItemCount = 5,
+                ContainerTagName = "ul",
+                CssClass = "pagination",
+                CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>",
+                DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>",
+                PagerItemTemplate = "<li>{0}</li>"
+            }).AjaxOptions(a => a.SetUpdateTargetId("articles"))
+        </div>
+    </div>
+</body>
+</html>

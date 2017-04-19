@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>设置部门</title>
+</head>
+<body>
+    <div style="padding: 15px; overflow: hidden">
+        <form id="SetUserDeptForm" method="post" action="">
+            <table class="tableForm" width="100%">
+                <tr>
+                    <th>
+                        用户：
+                    </th>
+                    <td>
+                        <input type="hidden" id="hidUserIdDept" name="hidUserIdDept" />
+                        <input type="text" name="txtUserNameDept" id="txtUserNameDept" class="easyui-validatebox textbox" style="width:170px;height:22px;" disabled="disabled" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        用户部门：
+                    </th>
+                    <td>
+                        <input class="easyui-combotree" id="treeDepartmentParentId" name="treeDepartmentParentId"
+                               data-options="url: '/Department/GetAllDepartmentTree',onlyLeafCheck:true,multiple:true," style="width:170px;height:22px;" />
+                        <img style="cursor: pointer; vertical-align: middle;" onclick="$('#treeDepartmentParentId').combotree('clear');"
+                             alt="清空部门" title="清空部门" src="../Content/themes/icon/edit-clear.png" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

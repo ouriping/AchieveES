@@ -1,0 +1,354 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>数据表管理</title>
+    <link href="~/Scripts/jquery-easyui-1.4.4/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-easyui-1.4.4/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
+    <script src="~/Scripts/jquery-easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
+    <link href="~/Content/themes/icon.css" rel="stylesheet" />
+    <script src="~/Content/js/common.js"></script>
+    <link href="~/Content/themes/table.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({     //请求当前用户可以操作的按钮
+                url: "/Button/GetUserAuthorizeButton?r=" + Math.random(),
+                type: "post",
+                data: { "KeyCode": "Table", "KeyName": "Table" },
+                dataType: "json",
+                timeout: 5000,
+                success: function (data) {
+                    if (data.success) {
+                        var toolbar = getToolBar(data);      //common.js
+                        if (data.search) {     //判断是否有浏览权限
+                            var oldSelectTabId;   //上次点选的RoleId
+                            $("#ui_Table_dg").datagrid({       //初始化datagrid
+                                url: "/Table/GetAllTableInfo",
+                                striped: true, rownumbers: true, pagination: true, pageSize: 20, singleSelect: true, multiSort: false,
+                                idField: 'Id',
+                                sortName: 'UpdateTime',
+                                sortOrder: 'desc',
+                                pageList: [20, 40, 60, 80, 100],
+                                frozenColumns: [[
+                                                //{ field: 'ck', checkbox: true },
+                                                //{ field: 'Id', title: 'ID', width: 60 },
+                                                { field: 'TabName', title: '物理表名', width: 100 },
+                                                { field: 'TabViewName', title: '表显示名', width: 100 }]],
+                                columns: [[
+                                            {
+                                                field: 'IsActive', title: '启用', width: 40, align: 'center',
+                                                formatter: function (value, row, index) {
+                                                    return value ? '<img src="../../Content/themes/icon/chk_checked.gif" alt="已启用" title="已启用" />' : '<img src="../../Content/themes/icon/chk_unchecked.gif" alt="未启用" title="未启用" />';
+                                                }
+                                            },
+                                           { field: 'CreateBy', title: '创建人', width: 80 },
+                                           { field: 'CreateTime', title: '创建时间', width: 120 },
+                                           { field: 'UpdateBy', title: '最后更新人', width: 130 },
+                                           { field: 'UpdateTime', title: '最后更新时间', sortable: true, width: 150 }
+                                ]],
+                                toolbar: toolbar.length == 0 ? null : toolbar,
+                                onSelect: function (rowIndex, rowData) {
+                                    if (oldSelectTabId == rowData.Id) {
+                                        return;
+                                    }
+                                    oldSelectTabId = rowData.Id;
+                                    var $ui_Table_layout = $("#ui_Table_layout");
+                                    var eastFields = $ui_Table_layout.layout("panel", "east");
+                                    if (eastFields.panel("options").collapsed) {   //判断是否展开
+                                        $ui_Table_layout.layout("expand", "east");
+                                    }
+                                    eastFields.panel("setTitle", rowData.TabViewName + "表（" + rowData.TabName + "）字段");
+                                    if ($("#ui_field_dg").data("datagrid")) {
+                                        $("#ui_field_dg").datagrid({       //请求数据
+                                            url: "/Table/GetFilesByTabId?TabId=" + rowData.Id
+                                        });
+                                    }
+                                    else {
+                                        $("#ui_field_dg").datagrid({       //初始化datagrid
+                                            url: "/Table/GetFilesByTabId?TabId=" + rowData.Id,
+                                            striped: true, rownumbers: true, pagination: true, pageSize: 20, singleSelect: true,
+                                            idField: 'Id',
+                                            sortName: 'Sort',
+                                            sortOrder: 'asc',
+                                            pageList: [20, 40, 60, 80, 100],
+                                            columns: [[
+                                                { field: 'FieldName', title: '字段名', width: 90 },
+                                                { field: 'FieldViewName', title: '字段显示名', width: 90 },
+                                                { field: 'DataTypeName', title: '数据类型', width: 80 },
+                                                {
+                                                    field: 'IsActive', title: '启用', width: 40, align: 'center',
+                                                    formatter: function (value, row, index) {
+                                                        return value ? '<img src="../../Content/themes/icon/chk_checked.gif" alt="已启用" title="已启用" />' : '<img src="../../Content/themes/icon/chk_unchecked.gif" alt="未启用" title="未启用" />';
+                                                    }
+                                                },
+                                                { field: 'Sort', title: '排序', sortable: true, width: 50 }//,
+                                                //{ field: 'UpdateBy', title: '最后更新人', width: 130 },
+                                                //{ field: 'UpdateTime', title: '最后更新时间', width: 150 }
+                                            ]],
+                                        });
+                                    }
+                                }
+                            });
+                        }
+                        else {
+                            $.show_alert("提示", "无权限，请联系管理员！");
+                        }
+                    } else {
+                        $.show_alert("错误", data.result);
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    if (textStatus == "timeout") {
+                        $.show_alert("提示", "请求超时，请刷新当前页重试！");
+                    }
+                    else {
+                        $.show_alert("错误", textStatus + "：" + errorThrown);
+                    }
+                }
+            })
+
+            //回车搜索
+            $("#ui_Table_search").find('input').on('keyup', function (event) {
+                if (event.keyCode == '13') {
+                    searchdata();
+                }
+            })
+        });
+
+        //查询数据表
+        function SelTabData() {
+            var row = $("#ui_Table_dg").datagrid("getChecked");
+            if (row.length < 1) {
+                $.show_alert("提示", "请先选择要查询的数据表");
+                return;
+            }
+            var width = window.screen.availWidth - 300;
+            var height = window.screen.availHeight - 230;
+            var content = '<iframe src="/Table/TabDataView?TabId=' + row[0].Id + '" width="100%" height="99%" frameborder="0" scrolling="no"></iframe>';
+            $("<div/>").dialog({
+                id: "SelTabData",
+                content: content,
+                title: "数据查询",
+                height: height,
+                width: width,
+                modal: true,
+                onClose: function () {
+
+                }
+            });
+        }
+
+        //新增
+        function AddTable() {
+            $("<div/>").dialog({
+                id: "ui_Table_add_dialog",
+                href: "/Table/TableAdd",
+                title: "添加数据表",
+                height: 220,
+                width: 400,
+                modal: true,
+                buttons: [{
+                    id: "ui_Table_add_btn",
+                    text: '添 加',
+                    handler: function () {
+                        $("#TableAddForm").form("submit", {
+                            url: "/Table/AddTable",
+                            onSubmit: function (param) {
+                                param.TabName = $("#txtTabName").val();
+                                param.TabViewName = $("#txtTabViewName").val();
+                                param.IsActive = document.getElementById("chkIsActive").checked;
+                                if ($(this).form('validate')) {
+                                    $('#ui_Table_edit_btn').linkbutton('disable');
+                                    return true;
+                                }
+                                else {
+                                    $('#ui_Table_add_btn').linkbutton('enable');
+                                    return false;
+                                }
+                            },
+                            success: function (data) {
+                                var dataJson = eval('(' + data + ')');
+                                if (dataJson.success) {
+                                    $("#ui_Table_add_dialog").dialog('destroy');
+                                    $.show_alert("提示", dataJson.msg);
+                                    $("#ui_Table_dg").datagrid("reload");
+                                } else {
+                                    $('#ui_Table_add_btn').linkbutton('enable');
+                                    $.show_alert("提示", dataJson.msg);
+                                }
+                            }
+                        });
+                    }
+                }, {
+                    text: '取 消',
+                    handler: function () {
+                        $("#ui_Table_add_dialog").dialog('destroy');
+                    }
+                }],
+                onLoad: function () {
+                    $("#txtTabName").focus();
+                },
+                onClose: function () {
+                    $("#ui_Table_add_dialog").dialog('destroy');  //销毁dialog对象
+                }
+            });
+        }
+
+        //修改
+        function EditTable() {
+            var row = $("#ui_Table_dg").datagrid("getChecked");
+            if (row.length < 1) {
+                $.show_alert("提示", "请先选择要修改的数据表");
+                return;
+            }
+            $("<div/>").dialog({
+                id: "ui_Table_edit_dialog",
+                href: "/Table/TableEdit",
+                title: "修改数据表",
+                height: 220,
+                width: 400,
+                modal: true,
+                buttons: [{
+                    id: "ui_Table_edit_btn",
+                    text: '修 改',
+                    handler: function () {
+                        $("#TableEditForm").form("submit", {
+                            url: "/Table/EditTable",
+                            onSubmit: function (param) {
+                                param.id = $("#hidid").val();
+                                param.originalName = $("#hidoriginalName").val();
+                                param.originalViewName = $("#hidoriginalViewName").val();
+                                param.TabName = $("#txtTabName").val();
+                                param.TabViewName = $("#txtTabViewName").val();
+                                param.IsActive = document.getElementById("chkIsActive").checked;
+                                if ($(this).form('validate')) {
+                                    $('#ui_Table_add_btn').linkbutton('disable');
+                                    return true;
+                                }
+                                else {
+                                    $('#ui_Table_edit_btn').linkbutton('enable');
+                                    return false;
+                                }
+                            },
+                            success: function (data) {
+                                var dataJson = eval('(' + data + ')');
+                                if (dataJson.success) {
+                                    $("#ui_Table_edit_dialog").dialog('destroy');
+                                    $.show_alert("提示", dataJson.msg);
+                                    $("#ui_Table_dg").datagrid("reload");
+                                } else {
+                                    $('#ui_Table_edit_btn').linkbutton('enable');
+                                    $.show_alert("提示", dataJson.msg);
+                                }
+                            }
+                        });
+                    }
+                }, {
+                    text: '取 消',
+                    handler: function () {
+                        $("#ui_Table_edit_dialog").dialog('destroy');
+                    }
+                }],
+                onLoad: function () {
+                    $("#hidid").val(row[0].Id);
+                    $("#hidoriginalName").val(row[0].TabName);
+                    $("#hidoriginalViewName").val(row[0].TabViewName);
+                    $("#txtTabName").val(row[0].TabName);
+                    $("#txtTabViewName").val(row[0].TabViewName);
+                    document.getElementById("chkIsActive").checked = row[0].IsActive;
+                },
+                onClose: function () {
+                    $("#ui_Table_edit_dialog").dialog('destroy');
+                }
+            });
+        }
+
+        //删除
+        function DelTable() {
+            var rows = $("#ui_Table_dg").datagrid("getChecked");
+            if (rows.length < 1) {
+                $.show_alert("提示", "请先勾选要删除的数据表");
+                return;
+            }
+            $.messager.confirm('提示', '此操作将会删除掉物理数据表且不可恢复,确定删除选中行吗？', function (r) {
+                if (r) {
+                    var TableIDs = "";
+                    $.each(rows, function (i, row) {
+                        TableIDs += row.Id + ",";
+                    });
+                    TableIDs = TableIDs.substring(0, TableIDs.length - 1);
+                    $.ajax({
+                        url: "/Table/DelTableByIDs",
+                        data: {
+                            IDs: TableIDs
+                        },
+                        type: "POST",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.success) {
+                                $.show_alert("提示", data.msg);
+                                $("#ui_Table_dg").datagrid("reload").datagrid('clearSelections').datagrid('clearChecked');
+                            } else {
+                                $.show_alert("提示", data.msg);
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+        //搜索
+        function searchdata() {
+            $("#ui_Table_dg").datagrid('load', {
+                TabName: $("#txtSearchTabName").val(),
+                TabViewName: $("#txtSearchTabViewName").val()
+            });
+            $("#ui_Table_dg").datagrid('clearSelections').datagrid('clearChecked');
+        }
+
+    </script>
+
+</head>
+<body>
+    <div id="ui_Table_layout" class="easyui-layout" data-options="fit:true,border:false">
+        <div data-options="region:'north',split:true,border:true,collapsed:false" title="搜索条件" style="height:72px;">
+            <div id="ui_Table_search">
+                <table class="tableForm" style="height: 28px; background: #f5f5f5;">
+                    <tr>
+                        <th height="20px">
+                            物理表名：
+                        </th>
+                        <td>
+                            <input name="txtSearchTabName" id="txtSearchTabName" class="easyui-validatebox textbox" style="width:150px;height:22px;" />
+                        </td>
+                        <th height="20px">
+                            表显示名：
+                        </th>
+                        <td>
+                            <input name="txtSearchTabViewName" id="txtSearchTabViewName" class="easyui-validatebox textbox" style="width:150px;height:22px;" />
+                        </td>
+                        <td>
+                            <a href="javascript:void(0);" class="easyui-linkbutton" iconcls="icon-search" plain="true"
+                               onclick="searchdata();">搜索</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div data-options="region:'east',split:true,border:true,collapsed:true" title="字段"
+             style="width: 480px;">
+            <table id="ui_field_dg" data-options="fit:true,border:false"></table>
+        </div>
+        <div data-options="region:'center',border:false">
+            <table id="ui_Table_dg" data-options="fit:true,border:false"></table>
+        </div>
+    </div>
+
+</body>
+</html>

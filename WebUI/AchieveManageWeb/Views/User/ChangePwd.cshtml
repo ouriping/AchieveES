@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>修改密码</title>
+</head>
+<body>
+    <div style="padding: 15px; overflow: hidden">
+        <form id="ui_user_userchangepwd_form" method="post" action="">
+            <table class="tableForm" width="100%">
+                <tr>
+                    <th>
+                        原密码：
+                    </th>
+                    <td>
+                        <input type="password" name="txtoriginalpwd" id="txtoriginalpwd"
+                               class="easyui-validatebox textbox" data-options="required:true" style="width:170px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        新密码：
+                    </th>
+                    <td>
+                        <input type="password" name="txtnewpwd" id="txtnewpwd"
+                               class="easyui-validatebox textbox" data-options="required:true" style="width:170px;height:22px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        确认密码：
+                    </th>
+                    <td>
+                        <input type="password" name="txtconfirmpwd" id="txtconfirmpwd"
+                               class="easyui-validatebox textbox" data-options="required:true, validType:'eqPwd[\'#txtnewpwd\']'" style="width:170px;height:22px;" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
